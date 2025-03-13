@@ -23,7 +23,6 @@ N9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-
 zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfO
 WRRJOnQtpZun8ha" crossorigin="anonymous"></script>
-
     <div class="container-fluid p-4">
         <h1 class="pb-4">
             <%= title %>
@@ -35,6 +34,7 @@ WRRJOnQtpZun8ha" crossorigin="anonymous"></script>
                     <th>Título</th>
                     <th>Descripción</th>
                     <th>Ruta</th>
+                    <th>Etiqueta</th>
                     <th>Fecha de creación</th>
                 </tr>
             </thead>
@@ -52,6 +52,9 @@ WRRJOnQtpZun8ha" crossorigin="anonymous"></script>
                         </td>
                         <td>
                             <%= foto.ruta %>
+                        </td>
+                        <td>
+                            <%= foto.etiqueta && foto.etiqueta.length > 0 ? foto.etiqueta.map(instancia => instancia.texto).join(", ") : 'Sin etiquetas' %>
                         </td>
                         <td>
                             <%= foto.createdAt.toLocaleDateString('en-US') %>
