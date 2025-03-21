@@ -23,7 +23,31 @@ N9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-
 zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfO
 WRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Galería de Fotos</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/fotos/findAll/view">Ver Opciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/fotos/findAllByRate/view?lower=0&higher=5">Ver Por Rango</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div class="container-fluid p-4">
+        <a href="/photos/add" class="btn btn-secondary"> ... Add New Photo ... </a>
+
         <h1 class="pb-4">
             <%= title %>
         </h1>
@@ -54,7 +78,8 @@ WRRJOnQtpZun8ha" crossorigin="anonymous"></script>
                             <%= foto.ruta %>
                         </td>
                         <td>
-                            <%= foto.etiqueta && foto.etiqueta.length > 0 ? foto.etiqueta.map(instancia => instancia.texto).join(", ") : 'Sin etiquetas' %>
+                            <%= foto.etiqueta && foto.etiqueta.length> 0 ? foto.etiqueta.map(instancia =>
+                                instancia.texto).join(", ") : 'Sin etiquetas' %>
                         </td>
                         <td>
                             <%= foto.createdAt.toLocaleDateString('en-US') %>
